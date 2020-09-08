@@ -88,25 +88,23 @@ a{
     position: fixed;
     color:white;
     margin:30px;
-
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    top:10%;
+    top:16%;
 }
 
-#nav > ul{
+#nav li{
     list-style: none;
 }
 
-#nav > ul > li{
-    margin:30px 0;
+.menu{
+    display: inline-block;
+    margin: 8px 0 8px 7px;
     cursor: pointer;
     font-weight: bold;
-    text-shadow: rgb(156, 156, 156) 2px 2px;
+    text-shadow: rgb(156, 156, 156) 1px 2px;
 }
-
-#nav > ul > li::after{
+.menu::after{
     display: block;
     content: '';
     width:0%;
@@ -114,8 +112,21 @@ a{
     background-color: white;
 }
 
-#nav > ul > li:hover::after{
+.menu:hover::after{
     animation: underline 0.3s forwards;
+}
+
+.sub-menu{
+    margin: 30px 20px;
+    font-size:13px;
+    font-weight: 600;
+}
+
+.toggleOn{
+    display: block;
+}
+.toggleOff{
+    display: none;
 }
 
 .footer{

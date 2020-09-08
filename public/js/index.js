@@ -10,7 +10,6 @@ var app = new Vue({
     },
     methods: {
         calculateSectionOffsets() {
-            console.log('hello1');
             let sections = document.getElementsByTagName('section');
             let length = sections.length;
 
@@ -20,7 +19,6 @@ var app = new Vue({
             }
         },
         scrollToSection(id, force = false) {
-            console.log('hello2');
             if (this.inMove && !force) return false;
 
             this.activeSection = id;
@@ -45,7 +43,6 @@ var app = new Vue({
         },
 
         moveDown() {
-            console.log('hello4');
             this.inMove = true;
             this.activeSection--;
 
@@ -92,5 +89,20 @@ var nav = new Vue({
     el: "#nav",
     data: {
         navs: ['ONLINE STORE', 'OUR STORY', 'LOOKBOOK', 'COMMUNITY'],
-    }
+        subNavs: [
+            ['ALL', 'CROP SLIM', 'CROP STRAIGHT', 'REGULAR STRAIGHT', 'BOOTS CUT', 'LOOSE TAPERED', 'WIDE STRAIGHT', 'NEW STRAIGHT', 'JAPANESE DENIM', 'OUTER/INNER', 'ACC/OTHER'],
+            ['SUB_MENU1'],
+            ['SUB_MENU1', 'SUB_MENU2'],
+            ['NEWS/EVENT', 'FAQ', 'REVIEW', 'Q&A'],
+        ],
+    },
+    methods: {
+        toggleSubMenu: function (index) {
+            target_sub_menu = document.getElementsByClassName('sub_menu_' + index);
+            for (let i = 0; i < target_sub_menu.length; i++) {
+                target_sub_menu[i].classList.toggle('toggleOff');
+                console.log(target_sub_menu[i].classList);
+            }
+        }
+    },
 })

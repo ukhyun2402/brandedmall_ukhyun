@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/main.css">
+    <!-- Vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- FONTAWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <title>브랜디드</title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="left title">
+            <a href="/">BRANDED</a>
+        </div>
+
+        <div class="right">
+            <div class="sub-nav">
+                <span>LOGIN</span>
+                <span><i class="fas fa-search"></i></span>
+                <span><i class="fas fa-user-circle"></i></span>
+                <span><i class="fas fa-shopping-cart"></i></span>
+            </div>
+        </div>
+    </div>
+
+    <div id="nav">
+        <ul>
+            <li v-for="( item, index ) in navs" :key="index" @click="t()">
+                <span>{{item}}</span>
+            </li>
+        </ul>
+    </div>
+
+    <div id="app">
+        <div class="sections-menu">
+            <span class="menu-point" v-bind:class="{active: activeSection == index}" v-on:click="scrollToSection(index)"
+                v-for="(offset,index) in offsets" v-bind:key="index">
+            </span>
+        </div>
+        <section class="fullpage" v-for='i in 3' :style="{backgroundImage: 'url('+'/public/img/main_0'+i+'.jpg)'}">
+        </section>
+        <section class="fullpage footer">
+            <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus temporibus ullam quasi inventore
+                deserunt, sint debitis officia doloremque soluta quod corrupti atque reiciendis voluptas exercitationem
+                at esse assumenda tempora vitae?
+            </div>
+            <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos iure unde est sequi, ab molestiae dolores,
+                blanditiis architecto animi necessitatibus suscipit doloribus. Quos iure omnis, ullam sed nesciunt dolor
+                qui?
+            </div>
+            <div>
+                <a href="https://github.com/ukhyun2402/brandedmall_ukhyun"><i class="fab fa-github"></i></a>
+            </div>
+        </section>
+    </div>
+
+    <script src="/public/js/index.js"></script>
+</body>
+
+</html>
