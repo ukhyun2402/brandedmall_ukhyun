@@ -99,9 +99,19 @@ var nav = new Vue({
     methods: {
         toggleSubMenu: function (index) {
             target_sub_menu = document.getElementsByClassName('sub_menu_' + index);
+            // All SubMenu
+            sub_menu = document.getElementsByClassName('sub-menu');
+            for (let i = 0; i < sub_menu.length; i++) {
+                if (sub_menu[i].classList.contains('sub_menu_' + index)) {
+                    continue;
+                }
+                if (!sub_menu[i].classList.contains('toggleOff')) {
+                    sub_menu[i].classList.add('toggleOff');
+                }
+            }
+            // target SubMenu
             for (let i = 0; i < target_sub_menu.length; i++) {
                 target_sub_menu[i].classList.toggle('toggleOff');
-                console.log(target_sub_menu[i].classList);
             }
         }
     },
