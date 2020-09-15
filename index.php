@@ -5,7 +5,7 @@
     <?php
     include __DIR__ . '/components/head.php';
     ?>
-    <title>브랜디드</title>
+    <title>Test</title>
 </head>
 
 <body>

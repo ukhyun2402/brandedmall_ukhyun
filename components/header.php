@@ -1,6 +1,6 @@
 <div class="row">
     <div class="left title">
-        <a href="/">BRANDED</a>
+        <a href="/">TEST</a>
     </div>
 
     <div class="right">
